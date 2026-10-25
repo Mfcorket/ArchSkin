@@ -1,0 +1,14 @@
+{
+  "themeId": "xfce",
+  "sourcePackage": "xfce4-settings",
+  "sourceVersion": "4.18",
+  "sourceUrl": "https://gitlab.xfce.org/xfce/xfce4-settings",
+  "license": "GPL-2.0+",
+  "licenseFile": "LICENSE",
+  "attribution": "https://gitlab.xfce.org/xfce/xfce4-settings",
+  "assets": {
+    "icons": ["hicolor"],
+    "colors": ["xfce"],
+    "fonts": ["DejaVu Sans"]
+  }
+}

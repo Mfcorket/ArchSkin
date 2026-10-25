@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl
+    x:Class="ArchSkin.Shell.Views.DesktopView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid x:Name="RootGrid">
+        <Image x:Name="WallpaperImage" Stretch="UniformToFill" Visibility="Collapsed"/>
+        <Grid x:Name="FallbackGrid" Background="#2b2f3a">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="12">
+                <TextBlock Text="ArchSkin"
+                           FontSize="64"
+                           FontWeight="Light"
+                           Foreground="#eceff4"
+                           HorizontalAlignment="Center"/>
+                <TextBlock Text="Give your Windows an Arch-grade look."
+                           FontSize="18"
+                           Foreground="#d8dee9"
+                           HorizontalAlignment="Center"/>
+                <TextBlock Text="Press the Activities button or the apps button to launch applications."
+                           FontSize="13"
+                           Foreground="#9aa5b1"
+                           HorizontalAlignment="Center"
+                           Margin="0,16,0,0"/>
+            </StackPanel>
+
+            <ItemsControl x:Name="WidgetsPanel"
+                          Grid.Row="1"
+                          Margin="24,0,24,24"
+                          Visibility="Collapsed">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal" Spacing="16"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border Background="#3b4252" CornerRadius="12" Padding="16" Width="280">
+                            <StackPanel Spacing="8">
+                                <TextBlock Text="{Binding Title}"
+                                           FontSize="14"
+                                           FontWeight="SemiBold"
+                                           Foreground="#eceff4"/>
+                                <ContentControl Content="{Binding Content}"/>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </Grid>
+    </Grid>
+</UserControl>

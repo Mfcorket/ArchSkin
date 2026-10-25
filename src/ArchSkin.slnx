@@ -1,0 +1,12 @@
+<Solution>
+  <Project Path="ArchSkin.Assets/ArchSkin.Assets.csproj" />
+  <Project Path="ArchSkin.Core/ArchSkin.Core.csproj" />
+  <Project Path="ArchSkin.Login/ArchSkin.Login.csproj" />
+  <Project Path="ArchSkin.Service/ArchSkin.Service.csproj" />
+  <Project Path="ArchSkin.Settings/ArchSkin.Settings.csproj" />
+  <Project Path="ArchSkin.Shell/ArchSkin.Shell.csproj">
+    <Platform Project="x86" />
+  </Project>
+  <Project Path="ArchSkin.Tests/ArchSkin.Tests.csproj" />
+  <Project Path="ArchSkin.ThemeSync/ArchSkin.ThemeSync.csproj" />
+</Solution>

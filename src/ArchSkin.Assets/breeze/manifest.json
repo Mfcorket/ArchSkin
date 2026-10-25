@@ -1,0 +1,14 @@
+{
+  "themeId": "breeze",
+  "sourcePackage": "breeze",
+  "sourceVersion": "6.2",
+  "sourceUrl": "https://invent.kde.org/plasma/breeze",
+  "license": "LGPL-2.1+",
+  "licenseFile": "LICENSE",
+  "attribution": "https://invent.kde.org/plasma/breeze",
+  "assets": {
+    "icons": ["hicolor"],
+    "colors": ["breeze"],
+    "fonts": ["Noto Sans"]
+  }
+}

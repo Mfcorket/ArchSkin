@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl
+    x:Class="ArchSkin.Settings.Views.PanelSettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel Spacing="20">
+        <TextBlock Text="Clock" FontSize="18" FontWeight="SemiBold"/>
+        <ToggleSwitch x:Name="ClockShowDate" Header="Show date with clock" Toggled="OnSettingChanged"/>
+        <ToggleSwitch x:Name="ClockShowSeconds" Header="Show seconds" Toggled="OnSettingChanged"/>
+        <ComboBox x:Name="ClockFormat" Header="Clock format" SelectionChanged="OnSettingChanged">
+            <ComboBoxItem Content="24-hour (HH:mm)" Tag="HH:mm"/>
+            <ComboBoxItem Content="12-hour (hh:mm tt)" Tag="hh:mm tt"/>
+        </ComboBox>
+
+        <TextBlock Text="System Tray" FontSize="18" FontWeight="SemiBold" Margin="0,16,0,0"/>
+        <ToggleSwitch x:Name="ShowBattery" Header="Show battery percentage" Toggled="OnSettingChanged"/>
+        <ToggleSwitch x:Name="ShowNetwork" Header="Show network status" Toggled="OnSettingChanged"/>
+        <ToggleSwitch x:Name="ShowVolume" Header="Show volume icon" Toggled="OnSettingChanged"/>
+    </StackPanel>
+</UserControl>

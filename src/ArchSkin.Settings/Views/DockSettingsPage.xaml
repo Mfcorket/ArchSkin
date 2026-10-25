@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl
+    x:Class="ArchSkin.Settings.Views.DockSettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel Spacing="20">
+        <TextBlock Text="Appearance" FontSize="18" FontWeight="SemiBold"/>
+        <Slider x:Name="IconSize" Header="Icon size" Minimum="32" Maximum="72" StepFrequency="4" ValueChanged="OnSettingChanged"/>
+        <ToggleSwitch x:Name="AutoHide" Header="Auto-hide dock" Toggled="OnSettingChanged"/>
+        <ToggleSwitch x:Name="ShowRunningApps" Header="Show running applications" Toggled="OnSettingChanged"/>
+        <ComboBox x:Name="DockPosition" Header="Dock position" SelectionChanged="OnSettingChanged">
+            <ComboBoxItem Content="Left" Tag="Left"/>
+            <ComboBoxItem Content="Bottom" Tag="Bottom"/>
+            <ComboBoxItem Content="Right" Tag="Right"/>
+        </ComboBox>
+    </StackPanel>
+</UserControl>

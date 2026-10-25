@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="ArchSkin.Settings.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="ArchSkin Settings">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="260"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <NavigationView x:Name="NavView"
+                        Grid.Column="0"
+                        PaneDisplayMode="Auto"
+                        SelectionChanged="OnNavSelectionChanged"
+                        IsSettingsVisible="False">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Icon="BrowsePhotos" Content="Theme" Tag="Theme" IsSelected="True"/>
+                <NavigationViewItem Icon="Clock" Content="Panel" Tag="Panel"/>
+                <NavigationViewItem Icon="Dock" Content="Dock" Tag="Dock"/>
+                <NavigationViewItem Icon="Switch" Content="Overview" Tag="Overview"/>
+                <NavigationViewItem Icon="Pictures" Content="Wallpaper" Tag="Wallpaper"/>
+                <NavigationViewItem Icon="Download" Content="Updates" Tag="Updates"/>
+                <NavigationViewItem Icon="Help" Content="About" Tag="About"/>
+            </NavigationView.MenuItems>
+        </NavigationView>
+
+        <ScrollViewer Grid.Column="1" Padding="32">
+            <StackPanel x:Name="ContentPanel" Spacing="16">
+                <TextBlock x:Name="PageTitle" Text="Theme" FontSize="28" FontWeight="SemiBold"/>
+                <TextBlock x:Name="PageDescription" Text="Customize the look and feel of ArchSkin" Foreground="#666" TextWrapping="Wrap"/>
+                <ContentControl x:Name="PageContent" Margin="0,16,0,0"/>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>

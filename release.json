@@ -1,0 +1,6 @@
+{
+  "version": "1.0.0",
+  "notes": "Initial general-availability release. Multi-theme support (Adwaita, Breeze, Xfce), Quick Settings, overview workspaces, login overlay, wallpaper engine, desktop widgets, update checker, crash reporting, and localization (English, Chinese, German).",
+  "downloadUrl": "https://github.com/archskin/archskin/releases/latest",
+  "publishedAt": "2026-10-25T00:00:00Z"
+}

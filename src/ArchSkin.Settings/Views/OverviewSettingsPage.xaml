@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl
+    x:Class="ArchSkin.Settings.Views.OverviewSettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel Spacing="20">
+        <TextBlock Text="Workspaces" FontSize="18" FontWeight="SemiBold"/>
+        <Slider x:Name="WorkspaceCount" Header="Number of workspaces" Minimum="1" Maximum="9" StepFrequency="1" ValueChanged="OnSettingChanged"/>
+
+        <TextBlock Text="Animations" FontSize="18" FontWeight="SemiBold" Margin="0,16,0,0"/>
+        <ToggleSwitch x:Name="Animations" Header="Enable overview animations" Toggled="OnSettingChanged"/>
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,14 @@
+{
+  "themeId": "adwaita",
+  "sourcePackage": "adwaita-icon-theme",
+  "sourceVersion": "46.0",
+  "sourceUrl": "https://archlinux.org/packages/extra/x86_64/adwaita-icon-theme/",
+  "license": "LGPL-2.1+",
+  "licenseFile": "LICENSE",
+  "attribution": "https://gitlab.gnome.org/GNOME/adwaita-icon-theme",
+  "assets": {
+    "icons": ["hicolor"],
+    "cursors": ["*"],
+    "fonts": ["*"]
+  }
+}

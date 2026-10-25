@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl
+    x:Class="ArchSkin.Shell.Views.DockView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="#3b4252" Width="64" Padding="6">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Button x:Name="AppsButton"
+                Grid.Row="0"
+                Content="&#xE71D;"
+                FontFamily="Segoe MDL2 Assets"
+                FontSize="24"
+                Foreground="#eceff4"
+                Background="Transparent"
+                BorderThickness="0"
+                HorizontalAlignment="Center"
+                Click="OnAppsClick"/>
+
+        <ListView x:Name="PinnedList"
+                  Grid.Row="1"
+                  Margin="0,12,0,0"
+                  SelectionMode="None"
+                  IsItemClickEnabled="True"
+                  ItemClick="OnPinnedClick">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Button Click="OnAppButtonClick"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            HorizontalAlignment="Center"
+                            Padding="4">
+                        <TextBlock Text="&#xE71D;"
+                                   FontFamily="Segoe MDL2 Assets"
+                                   FontSize="28"
+                                   Foreground="#88c0d0"/>
+                    </Button>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <ListView x:Name="RunningList"
+                  Grid.Row="2"
+                  SelectionMode="None"
+                  IsItemClickEnabled="True"
+                  ItemClick="OnRunningClick">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Button Click="OnRunningButtonClick"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            HorizontalAlignment="Center"
+                            Padding="4">
+                        <TextBlock Text="&#xE737;"
+                                   FontFamily="Segoe MDL2 Assets"
+                                   FontSize="20"
+                                   Foreground="#d8dee9"/>
+                    </Button>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</UserControl>

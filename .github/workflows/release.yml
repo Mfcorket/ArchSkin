@@ -1,0 +1,57 @@
+name: release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore
+        run: dotnet restore src/ArchSkin.slnx
+
+      - name: Build
+        run: dotnet build src/ArchSkin.slnx -c Release --no-restore
+
+      - name: Test
+        run: dotnet test src/ArchSkin.Tests/ArchSkin.Tests.csproj -c Release --no-build
+
+      - name: Publish Shell
+        run: dotnet publish src/ArchSkin.Shell/ArchSkin.Shell.csproj -c Release -r win-x64 --self-contained -o artifacts/shell
+
+      - name: Publish Settings
+        run: dotnet publish src/ArchSkin.Settings/ArchSkin.Settings.csproj -c Release -r win-x64 --self-contained -o artifacts/settings
+
+      - name: Publish Service
+        run: dotnet publish src/ArchSkin.Service/ArchSkin.Service.csproj -c Release -r win-x64 --self-contained -o artifacts/service
+
+      - name: Publish ThemeSync
+        run: dotnet publish src/ArchSkin.ThemeSync/ArchSkin.ThemeSync.csproj -c Release -r win-x64 --self-contained -o artifacts/themesync
+
+      - name: Install Inno Setup
+        run: choco install innosetup -y --no-progress
+
+      - name: Build installer
+        run: '& "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" installer\setup.iss'
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: artifacts/ArchSkin-Setup-*.exe
+          body_path: CHANGELOG.md
+          draft: false
+          prerelease: false

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Breeze Theme Colors -->
+    <Color x:Key="PanelBackground">#232629</Color>
+    <Color x:Key="PanelForeground">#eff0f1</Color>
+    <Color x:Key="DesktopBackground">#2d2f34</Color>
+    <Color x:Key="AccentColor">#3daee9</Color>
+    <Color x:Key="AccentHover">#5eb8eb</Color>
+    <Color x:Key="AccentPressed">#1d6db5</Color>
+    <Color x:Key="WindowBackground">#232629</Color>
+    <Color x:Key="WindowForeground">#eff0f1</Color>
+    <Color x:Key="ControlBackground">#2d2f34</Color>
+    <Color x:Key="ControlForeground">#eff0f1</Color>
+    <Color x:Key="ControlBorder">#3a3d41</Color>
+    <Color x:Key="ControlHoverBackground">#3a3d41</Color>
+    <Color x:Key="ControlPressedBackground">#3daee9</Color>
+    <Color x:Key="ButtonBackground">#3daee9</Color>
+    <Color x:Key="ButtonForeground">#ffffff</Color>
+    <Color x:Key="ButtonHoverBackground">#5eb8eb</Color>
+    <Color x:Key="ButtonPressedBackground">#1d6db5</Color>
+    <Color x:Key="ListBackground">#232629</Color>
+    <Color x:Key="ListForeground">#eff0f1</Color>
+    <Color x:Key="ListSelectedBackground">#3daee9</Color>
+    <Color x:Key="ListSelectedForeground">#ffffff</Color>
+    <Color x:Key="ListHoverBackground">#3a3d41</Color>
+    <Color x:Key="TextSelectionHighlight">#3daee9</Color>
+    <Color x:Key="FocusBorder">#3daee9</Color>
+    <Color x:Key="ErrorColor">#ed4f4f</Color>
+    <Color x:Key="SuccessColor">#3ecf70</Color>
+    <Color x:Key="WarningColor">#f9c03f</Color>
+
+    <SolidColorBrush x:Key="PanelBackgroundBrush" Color="{StaticResource PanelBackground}"/>
+    <SolidColorBrush x:Key="PanelForegroundBrush" Color="{StaticResource PanelForeground}"/>
+    <SolidColorBrush x:Key="DesktopBackgroundBrush" Color="{StaticResource DesktopBackground}"/>
+    <SolidColorBrush x:Key="AccentBrush" Color="{StaticResource AccentColor}"/>
+    <SolidColorBrush x:Key="AccentHoverBrush" Color="{StaticResource AccentHover}"/>
+    <SolidColorBrush x:Key="AccentPressedBrush" Color="{StaticResource AccentPressed}"/>
+    <SolidColorBrush x:Key="WindowBackgroundBrush" Color="{StaticResource WindowBackground}"/>
+    <SolidColorBrush x:Key="WindowForegroundBrush" Color="{StaticResource WindowForeground}"/>
+    <SolidColorBrush x:Key="ControlBackgroundBrush" Color="{StaticResource ControlBackground}"/>
+    <SolidColorBrush x:Key="ControlForegroundBrush" Color="{StaticResource ControlForeground}"/>
+    <SolidColorBrush x:Key="ControlBorderBrush" Color="{StaticResource ControlBorder}"/>
+    <SolidColorBrush x:Key="ControlHoverBackgroundBrush" Color="{StaticResource ControlHoverBackground}"/>
+    <SolidColorBrush x:Key="ControlPressedBackgroundBrush" Color="{StaticResource ControlPressedBackground}"/>
+    <SolidColorBrush x:Key="ButtonBackgroundBrush" Color="{StaticResource ButtonBackground}"/>
+    <SolidColorBrush x:Key="ButtonForegroundBrush" Color="{StaticResource ButtonForeground}"/>
+    <SolidColorBrush x:Key="ButtonHoverBackgroundBrush" Color="{StaticResource ButtonHoverBackground}"/>
+    <SolidColorBrush x:Key="ButtonPressedBackgroundBrush" Color="{StaticResource ButtonPressedBackground}"/>
+    <SolidColorBrush x:Key="ListBackgroundBrush" Color="{StaticResource ListBackground}"/>
+    <SolidColorBrush x:Key="ListForegroundBrush" Color="{StaticResource ListForeground}"/>
+    <SolidColorBrush x:Key="ListSelectedBackgroundBrush" Color="{StaticResource ListSelectedBackground}"/>
+    <SolidColorBrush x:Key="ListSelectedForegroundBrush" Color="{StaticResource ListSelectedForeground}"/>
+    <SolidColorBrush x:Key="ListHoverBackgroundBrush" Color="{StaticResource ListHoverBackground}"/>
+    <SolidColorBrush x:Key="FocusBorderBrush" Color="{StaticResource FocusBorder}"/>
+    <SolidColorBrush x:Key="ErrorBrush" Color="{StaticResource ErrorColor}"/>
+    <SolidColorBrush x:Key="SuccessBrush" Color="{StaticResource SuccessColor}"/>
+    <SolidColorBrush x:Key="WarningBrush" Color="{StaticResource WarningColor}"/>
+
+    <!-- Default Styles -->
+    <Style TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource ButtonBackgroundBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource ButtonForegroundBrush}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Padding" Value="16,8"/>
+        <Setter Property="CornerRadius" Value="4"/>
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="Border"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="{TemplateBinding CornerRadius}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource ButtonHoverBackgroundBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource ButtonPressedBackgroundBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="0.5"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource ControlForegroundBrush}"/>
+        <Setter Property="FontSize" Value="13"/>
+    </Style>
+
+    <Style TargetType="TextBox">
+        <Setter Property="Background" Value="{StaticResource ControlBackgroundBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource ControlForegroundBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ControlBorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding" Value="8,6"/>
+        <Setter Property="CornerRadius" Value="4"/>
+        <Setter Property="FontSize" Value="13"/>
+    </Style>
+
+    <Style TargetType="Slider">
+        <Setter Property="Foreground" Value="{StaticResource AccentBrush}"/>
+    </Style>
+
+    <Style TargetType="ToggleSwitch">
+        <Setter Property="OnContent" Value="On"/>
+        <Setter Property="OffContent" Value="Off"/>
+    </Style>
+
+    <Style TargetType="ComboBox">
+        <Setter Property="Background" Value="{StaticResource ControlBackgroundBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource ControlForegroundBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ControlBorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="CornerRadius" Value="4"/>
+    </Style>
+
+    <Style TargetType="ListView">
+        <Setter Property="Background" Value="{StaticResource ListBackgroundBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource ListForegroundBrush}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+    </Style>
+
+    <Style TargetType="ListViewItem">
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="Padding" Value="12,8"/>
+    </Style>
+
+    <Style TargetType="Border" x:Key="WidgetBorder">
+        <Setter Property="Background" Value="{StaticResource ControlBackgroundBrush}"/>
+        <Setter Property="CornerRadius" Value="8"/>
+        <Setter Property="Padding" Value="16"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ControlBorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+    </Style>
+</ResourceDictionary>
